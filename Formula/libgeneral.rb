@@ -2,8 +2,8 @@ class LibtihmstarGeneral < Formula
   desc "General stuff for tihmstar's projects"
   homepage "https://github.com/tihmstar/libgeneral"
   url "https://github.com/tihmstar/libgeneral.git",
-    revision: "6bca5824f23ab88af0de6568bc7b3213318c27ed"
-  version "77"
+    revision: "03e33a356abd0ced4bfce8df9e9644edeaf2920c"
+  version "84"
   license "LGPL-2.1-or-later"
   head "https://github.com/tihmstar/libgeneral.git", branch: "master"
 
