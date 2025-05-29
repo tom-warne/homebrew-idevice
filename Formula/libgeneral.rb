@@ -1,4 +1,4 @@
-class LibtihmstarGeneral < Formula
+class Libgeneral < Formula
   desc "General stuff for tihmstar's projects"
   homepage "https://github.com/tihmstar/libgeneral"
   url "https://github.com/tihmstar/libgeneral.git",
@@ -14,7 +14,7 @@ class LibtihmstarGeneral < Formula
   end
 
   bottle do
-    root_url "https://github.com/stek29/homebrew-idevice/releases/download/libtihmstar-general-77"
+    sha256 cellar: :any, sequoia:      "232c418402758ffb7ded54849d8a5e3362bc70295f752a0ce5cab95507bc340a"
     sha256 cellar: :any, arm64_sonoma: "8fb71f18058442679e0623e40ec9bae2ea21da7ef86624d0e18228ca0116b6b8"
     sha256 cellar: :any, ventura:      "f598b2159ba5aa15c4023717d9cf0e5cf43c9dcfc47e4f7ea8c3ff38af63b205"
   end
@@ -29,7 +29,7 @@ class LibtihmstarGeneral < Formula
     inreplace %w[configure.ac],
       "git rev-list --count HEAD",
       "echo #{version.to_s.gsub(/[^\d]/, "")}",
-      false
+      audit_result: false
   end
 
   def install
