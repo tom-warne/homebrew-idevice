@@ -39,7 +39,7 @@ class Libimobiledevice < Formula
       --without-cython
     ]
 
-    system "./autogen.sh", *std_configure_args, *args
+    system "./autogen.sh", "--disable-dependency-tracking", "--prefix=#{self.prefix}", *args
 
     system "make"
     system "make", "install"

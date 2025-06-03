@@ -36,9 +36,9 @@ class Libinsn < Formula
   end
 
   def install
-    fix_tihmstar
+      # fix_tihmstar
 
-    system "./autogen.sh", *std_configure_args, "--disable-debug",
+    system "./autogen.sh", "--disable-dependency-tracking", "--prefix=#{self.prefix}"
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
   end

@@ -70,11 +70,10 @@ class Libipatcher < Formula
   end
 
   def install
-    fix_tihmstar
+      # fix_tihmstar
     build_libxpwn
 
-    system "./autogen.sh", "--disable-debug",
-                          "--disable-dependency-tracking",
+    system "./autogen.sh",  "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make"

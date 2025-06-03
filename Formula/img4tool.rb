@@ -36,9 +36,9 @@ class Img4tool < Formula
   end
 
   def install
-    fix_tihmstar
+      # fix_tihmstar
 
-    system "./autogen.sh", *std_configure_args
+    system "./autogen.sh", "--disable-dependency-tracking", "--prefix=#{self.prefix}"
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
   end

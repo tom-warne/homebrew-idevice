@@ -45,7 +45,7 @@ class Futurerestore < Formula
   end
 
   def install
-    fix_tihmstar
+      # fix_tihmstar
 
     system "./autogen.sh",
       "--disable-debug",

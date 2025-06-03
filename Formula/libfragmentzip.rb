@@ -37,7 +37,7 @@ class Libfragmentzip < Formula
   def install
     # fix_tihmstar
 
-    system "./autogen.sh", *std_configure_args
+    system "./autogen.sh", "--disable-dependency-tracking", "--prefix=#{self.prefix}"
     system "make"
     system "make", "install"
   end
