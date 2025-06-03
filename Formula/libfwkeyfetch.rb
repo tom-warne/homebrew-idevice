@@ -26,6 +26,9 @@ class Libfwkeyfetch < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
 
+  depends_on "libgeneral"
+  depends_on "libfragmentzip"
+
   def fix_tihmstar
     inreplace %w[configure.ac],
       "e",
