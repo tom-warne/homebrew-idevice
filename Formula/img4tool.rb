@@ -25,14 +25,14 @@ class Img4tool < Formula
   depends_on "pkg-config" => :build
 
   depends_on "libplist"
-  depends_on "libtihmstar-general"
+  depends_on "libgeneral"
   depends_on "openssl@3"
 
   def fix_tihmstar
     inreplace %w[configure.ac],
       "git rev-list --count HEAD",
       "echo #{version.to_s.gsub(/[^\d]/, "")}",
-      false
+      audit_result: false
   end
 
   def install

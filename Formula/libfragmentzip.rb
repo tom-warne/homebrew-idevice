@@ -2,8 +2,8 @@ class Libfragmentzip < Formula
   desc "Library for downloading single files from a remote zip archive"
   homepage "https://github.com/tihmstar/libfragmentzip"
   url "https://github.com/tihmstar/libfragmentzip.git",
-    revision: "2dcd708f838eb2eb7adea1f07a3350a0f9e08faa"
-  version "70"
+    revision: "92f184e631c7156113850afdb9c68a2d892e35b6"
+  version "76"
   license "LGPL-3.0-or-later"
   head "https://github.com/tihmstar/libfragmentzip.git", branch: "master"
 
@@ -24,18 +24,18 @@ class Libfragmentzip < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
 
-  depends_on "libtihmstar-general"
+  depends_on "libgeneral"
   depends_on "libzip"
 
   def fix_tihmstar
     inreplace %w[configure.ac],
       "git rev-list --count HEAD",
       "echo #{version.to_s.gsub(/[^\d]/, "")}",
-      false
+      audit_result: false
   end
 
   def install
-    fix_tihmstar
+    # fix_tihmstar
 
     system "./autogen.sh", *std_configure_args
     system "make"

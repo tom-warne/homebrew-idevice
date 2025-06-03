@@ -1,11 +1,11 @@
-class Libgeneral < Formula
+class Libfwkeyfetch < Formula
   desc "General stuff for tihmstar's projects"
-  homepage "https://github.com/tihmstar/libgeneral"
-  url "https://github.com/tihmstar/libgeneral.git",
-    revision: "03e33a356abd0ced4bfce8df9e9644edeaf2920c"
-  version "84"
+  homepage "https://github.com/tihmstar/libfwkeyfetch"
+  url "https://github.com/tihmstar/libfwkeyfetch.git",
+    revision: "7d9858ac5740889b6ff6c23137768256eedae6c9"
+  version "5"
   license "LGPL-2.1-or-later"
-  head "https://github.com/tihmstar/libgeneral.git", branch: "master"
+  head "https://github.com/tihmstar/libfwkeyfetch.git", branch: "master"
 
   livecheck do
     url :homepage
@@ -28,7 +28,7 @@ class Libgeneral < Formula
 
   def fix_tihmstar
     inreplace %w[configure.ac],
-      "git rev-list --count HEAD",
+      "e",
       "echo #{version.to_s.gsub(/[^\d]/, "")}",
       audit_result: false
   end

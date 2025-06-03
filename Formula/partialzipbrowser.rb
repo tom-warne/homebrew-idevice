@@ -27,7 +27,7 @@ class Partialzipbrowser < Formula
   depends_on "pkg-config" => :build
 
   depends_on "libfragmentzip"
-  depends_on "libtihmstar-general"
+  depends_on "libgeneral"
 
   uses_from_macos "zip" => :test
 
@@ -35,7 +35,7 @@ class Partialzipbrowser < Formula
     inreplace %w[configure.ac],
       "git rev-list --count HEAD",
       "echo #{version.to_s.gsub(/[^\d]/, "")}",
-      false
+      audit_result: false
   end
 
   def install

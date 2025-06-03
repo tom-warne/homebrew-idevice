@@ -39,7 +39,7 @@ Homebrew tap with various \*OS related tools
 - [libirecovery]( https://github.com/libimobiledevice/libirecovery )
 - [liboffsetfinder64]( https://github.com/Cryptiiiic/liboffsetfinder64 ) - Cryptiiiic's fork
 - [libplist]( https://github.com/libimobiledevice/libplist )
-- [libtihmstar-general]( https://github.com/tihmstar/libgeneral )
+- [libgeneral]( https://github.com/tihmstar/libgeneral )
 - [libusbmuxd]( https://github.com/libimobiledevice/libusbmuxd )
 - [openssl@1.0]( https://openssl.org/ )
 - [partial-zip]( https://github.com/planetbeing/partial-zip )

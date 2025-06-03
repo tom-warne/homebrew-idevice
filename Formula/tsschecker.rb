@@ -28,13 +28,13 @@ class Tsschecker < Formula
 
   depends_on "libfragmentzip"
   depends_on "libplist"
-  depends_on "stek29/idevice/libirecovery"
+  depends_on "libirecovery"
 
   def fix_tihmstar
     inreplace %w[configure.ac],
       "git rev-list --count HEAD",
       "echo #{version.to_s.gsub(/[^\d]/, "")}",
-      false
+      audit_result: false
   end
 
   def install

@@ -29,16 +29,16 @@ class Liboffsetfinder64 < Formula
   depends_on "pkg-config" => :build
 
   depends_on "img4tool"
-  depends_on "libtihmstar-general"
+  depends_on "libgeneral"
   depends_on "libzip"
-  depends_on "stek29/idevice/libinsn"
-  depends_on "stek29/idevice/libplist"
+  depends_on "libinsn"
+  depends_on "libplist"
 
   def fix_tihmstar
     inreplace %w[configure.ac],
       "git rev-list --count HEAD",
       "echo #{version.to_s.gsub(/[^\d]/, "")}",
-      false
+      audit_result: false
   end
 
   def install

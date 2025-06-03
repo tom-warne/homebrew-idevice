@@ -26,8 +26,8 @@ class Idevicerestore < Formula
 
   depends_on "libplist"
   depends_on "libzip"
-  depends_on "stek29/idevice/libimobiledevice"
-  depends_on "stek29/idevice/libirecovery"
+  depends_on "libimobiledevice"
+  depends_on "libirecovery"
 
   def install
     args = %w[

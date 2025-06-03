@@ -26,19 +26,19 @@ class Libinsn < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
 
-  depends_on "libtihmstar-general"
+  depends_on "libgeneral"
 
   def fix_tihmstar
     inreplace %w[configure.ac],
       "git rev-list --count HEAD",
       "echo #{version.to_s.gsub(/[^\d]/, "")}",
-      false
+      audit_result: false
   end
 
   def install
     fix_tihmstar
 
-    system "./autogen.sh", *std_configure_args
+    system "./autogen.sh", *std_configure_args, "--disable-debug",
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
   end

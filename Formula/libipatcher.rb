@@ -32,10 +32,10 @@ class Libipatcher < Formula
   depends_on "img4tool"
   depends_on "liboffsetfinder64"
   depends_on "libpng"
-  depends_on "libtihmstar-general"
+  depends_on "libgeneral"
   depends_on "libzip"
   depends_on "openssl@1.1"
-  depends_on "stek29/idevice/libplist"
+  depends_on "libplist"
 
   resource "xpwn" do
     url "https://github.com/nyuszika7h/xpwn/archive/f6baa79ee898657229c71c8fbcc2c7e39f31f35a.tar.gz"
@@ -66,7 +66,7 @@ class Libipatcher < Formula
     inreplace %w[configure.ac],
       "git rev-list --count HEAD",
       "echo #{version.to_s.gsub(/[^\d]/, "")}",
-      false
+      audit_result: false
   end
 
   def install

@@ -29,9 +29,9 @@ class Futurerestore < Formula
   depends_on "libfragmentzip"
   depends_on "libzip"
 
-  depends_on "stek29/idevice/libimobiledevice"
-  depends_on "stek29/idevice/libirecovery"
-  depends_on "stek29/idevice/libplist"
+  depends_on "libimobiledevice"
+  depends_on "libirecovery"
+  depends_on "libplist"
   depends_on "tsschecker"
 
   # https://github.com/libimobiledevice/idevicerestore/commit/f80a876b3598de4eb551bafcb279947c527fae33
@@ -41,7 +41,7 @@ class Futurerestore < Formula
     inreplace %w[configure.ac],
       "git rev-list --count HEAD",
       "echo #{version.to_s.gsub(/[^\d]/, "")}",
-      false
+      audit_result: false
   end
 
   def install
