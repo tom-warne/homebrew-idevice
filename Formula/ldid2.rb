@@ -20,7 +20,7 @@ class Ldid2 < Formula
     sha256 cellar: :any_skip_relocation, catalina: "09fb4bf2fbc3b42a090cd6913669f468c70e0b02377cab15efcc92cd87a35f35"
   end
 
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     system ENV.cc, "-I.", "sha224-256.c", "ldid2.cpp", "lookup2.c", "-lc++", "-oldid2"
