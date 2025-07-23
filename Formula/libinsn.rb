@@ -2,7 +2,6 @@ class Libinsn < Formula
   desc "Instruction decoder/encoder for 64bit ARM"
   homepage "https://github.com/tihmstar/libinsn"
   url "https://github.com/tihmstar/libinsn.git",
-    revision: "d63cfa4dba009827554f2154cefa080301150481"
   version "55"
   license "LGPL-2.1-or-later"
   head "https://github.com/tihmstar/libinsn.git", branch: "master"
